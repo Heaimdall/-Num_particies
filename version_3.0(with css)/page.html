@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset = "utf-8">
+	<link rel="stylesheet" href="Face.css" type="text/css"/>
+
+</head>
+
+<body>
+
+	<script>
+        var Calibrations = [[0.290946990251541, 0.290946990251541, "мм", "DEFAULT"]];
+        var num = 0;
+	</script>
+	<script src = "download_image.js"></script>
+
+	<div style = "margin-top: 20px;"><canvas  id = "myCanvas" width = 0 height = 0></div>
+	<div>
+
+		<div><input type = "file" id = "newImage"   onchange="read(files[0])" accept = 'image/png' class="file-upload" /></div>
+		<div><input type = "button" id = "myButton"  value = "Повышение контраста изображения" class="button"/></div>
+		<div><input type = "button" id = "myThirdButton" value = "Гистограмма распределения" class="button"/></div>
+		<div><input type = "button" id = "myForthButton" value = "Бинаризация" class="button"/></div>
+		<div><input type = "button" id = "myFifthButton" value = "Поиск частиц" class="button"/></div>
+		<div class="demo">
+			<input class="hide" id="hd-1" type="checkbox">
+			<label for="hd-1">Фильтрации</label>
+			<div>
+				<input type="button" id="mySecondButton" value="Контрастоповышающая Фильтрация" class="button"/>
+				<input type="button" id="mySeventhButton" value="Фильтрация-очистки" class="button"/>
+				<input type="button" id="myEighthButton" value="Фильтрация-замыкания" class="button"/>
+			</div>
+		</div>
+		<div><input type = "button" id = "btnDownload" value = "Сохранить изображение"  class="button"/></div>
+		<div><input type = "button" id = "mySixthButton" value = "Калибровка" class="button"/></div>
+
+
+		<div class="text">Левая граница: <span id="delta1">0</span>
+		Правая граница: <span id="delta2">255</span></div>
+
+		<div class="text">Размер X: ед. изм. / пиксель: <span id="delta3">0,290946990251541</span></div>
+
+		<div class="text">Размер Y: ед. изм. / пиксель: <span id="delta4">0,290946990251541</span></div>
+
+		<div class="text">Eд. изм. : <span id="pixelSize">мм</span></div>
+
+        <script src = "Calibration.js" ></script>
+	</div>
+
+    <script src = "FileSaver.js" ></script>
+	<script src = "255ShadesOfGrey.js" ></script>
+	<script src = "save.js" ></script>
+	<script src = "KontrastFilter.js" ></script>
+	<script src = "CleaningFilter.js" ></script>
+	<script src = "ClosingFilter.js" ></script>
+	<script src = "Build_Gistogramma.js" ></script>
+	<script src = "hand_binarization.js" ></script>
+	<script src = "FindPieces.js" ></script>
+
+</body>
+
+</html>
